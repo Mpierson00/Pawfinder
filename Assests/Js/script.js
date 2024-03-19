@@ -72,42 +72,62 @@ function generateName() {
 updateUI();
 
 
+fetch("https://dog.ceo/api/breeds/list/all")
+    .then(function (response) {
+        return response.json()
+    })
+    .then(function (data) {
+        console.log(data.message)
 
-// //modal button mecanics
-// function TogglebtnEvent() {
-//     document.getElementById('btn').click();
-// }
-// const btnEl = document.querySelector('.btn');
-// btnEl.addEventListener('click', () => {
-//     btnEl.classList.toggle('token: force');
-// })
-// const myBtn = document.getElementById("btn");
-// myBtn.addEventListener('click', function(e){
-//     const name = prompt ('what is your name')
-//    document.body.innerHTML = "<h1> Welcome, " + name + "!</hi>";
-// });
 
-const myBtn = document.getElementById("btn");
+        var breedsObject = data.message
+        var breedsArray = Object.keys(breedsObject)
 
-myBtn.addEventListener('click', function(e) {
-    const name = prompt('What is your name?');
-    document.body.innerHTML = "<h1>Welcome, " + name + "!</h1>";
-    
-    // Create a back button
-    const backButton = document.createElement('button');
-    backButton.textContent = 'Go Back';
-    backButton.addEventListener('click', function() {
-        // history.back(); // Go back to the previous page
-        document.location.href = ("http://127.0.0.1:5500/Pawfinder/index.html")
-    });
-    document.body.appendChild(backButton);
+        for (var i = 0; i < breedsArray.length; i++) {
+            const option = document.createElement('option');
+            option.value = breedsArray[i];
+            option.innerText = breedsArray[i];
+            select.appendChild(option);
+
+        }
+
+    })
+
+
+
+$("#select").on("change", function showImage(e) {
+
+
+    let url = (`https://dog.ceo/api/breed/${e.target.value}/images/random`)
+
+
+    console.log(url)
+    getDoggo(url)
+})
+
+
+
+const img = document.querySelector('.dog-img');
+
+const getDoggo = function (url) {
+
+    img.classList.remove('show')
+
+    fetch(url)
+        .then(function (response) {
+            return response.json()
+        })
+        .then(function (data) {
+            img.src = data.message
+        })
+}
+
+
+img.addEventListener('load', function () {
+    img.classList.add('show');
 });
 
-const slider = document.getElementById('contrastSlider');
-  const output = document.getElementById('sliderValue');
-  output.innerHTML = slider.value; // Display the default slider value
 
-  // Update the current slider value (each time you drag the slider handle)
-  slider.oninput = function() {
-    output.innerHTML = this.value;
-  }
+
+
+
