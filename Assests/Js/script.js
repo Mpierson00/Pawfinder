@@ -1,4 +1,4 @@
-
+ 
 var dogs = 'golden retriever'
 
 $.ajax({
@@ -71,3 +71,34 @@ function generateName() {
 
 updateUI();
 
+
+
+// //modal button mecanics
+// function TogglebtnEvent() {
+//     document.getElementById('btn').click();
+// }
+// const btnEl = document.querySelector('.btn');
+// btnEl.addEventListener('click', () => {
+//     btnEl.classList.toggle('token: force');
+// })
+// const myBtn = document.getElementById("btn");
+// myBtn.addEventListener('click', function(e){
+//     const name = prompt ('what is your name')
+//    document.body.innerHTML = "<h1> Welcome, " + name + "!</hi>";
+// });
+
+const myBtn = document.getElementById("btn");
+
+myBtn.addEventListener('click', function(e) {
+    const name = prompt('What is your name?');
+    document.body.innerHTML = "<h1>Welcome, " + name + "!</h1>";
+    
+    // Create a back button
+    const backButton = document.createElement('button');
+    backButton.textContent = 'Go Back';
+    backButton.addEventListener('click', function() {
+        // history.back(); // Go back to the previous page
+        document.location.href = ("http://127.0.0.1:5500/Pawfinder/index.html")
+    });
+    document.body.appendChild(backButton);
+});
