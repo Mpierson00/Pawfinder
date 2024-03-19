@@ -50,7 +50,7 @@ function generateName() {
     const xhr = new XMLHttpRequest();
     const url = `https://randommer.io/api/Name?nameType=fullname&quantity=5`;
     xhr.open("GET", url);
-    xhr.setRequestHeader("X-Api-Key", '9b34620ed8f641d8a0b25f4c7b71700e');
+    xhr.setRequestHeader("X-Api-Key", 'e743dc30afe74b2ea1d3f40295e671ae');
     xhr.setRequestHeader("Accept", "application/json");
     xhr.onreadystatechange = function () {
         if (xhr.readyState === 4 && xhr.status === 200) {
@@ -102,3 +102,12 @@ myBtn.addEventListener('click', function(e) {
     });
     document.body.appendChild(backButton);
 });
+
+const slider = document.getElementById('contrastSlider');
+  const output = document.getElementById('sliderValue');
+  output.innerHTML = slider.value; // Display the default slider value
+
+  // Update the current slider value (each time you drag the slider handle)
+  slider.oninput = function() {
+    output.innerHTML = this.value;
+  }
