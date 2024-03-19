@@ -54,11 +54,66 @@
     
     
 <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
-<script src="/Assests/Js/script.js"></script>
+<script src="./Assests/Js/script.js"></script>
 
     <footer>
-        <div id="about-us">Disclaimer: We are not associated with pawfinders.com. This website is only for educational purposes.</div>
+        <div id="about-us">Disclaimer: We are not associated with pawfinders.com. This website is only for educational
+            purposes.</div>
     </footer>
+</section>
+<button id="btn" type="button"> TESTING</button>
+<dialog open>
+    <article>
+      <h2>Confirm Your Membership</h2>
+      <p>
+        Thank you for signing up for a membership!
+        Please review the membership details below:
+      </p>
+      <ul>
+        <li>Membership: Individual</li>
+        <li>Price: $10</li>
+      </ul>
+      <footer>
+        <button className="secondary">
+          Cancel
+        </button>
+        <button>Confirm</button>
+      </footer>
+    </article>
+  </dialog>
+<button id="btn" > TESTING</button>
+<dialog id="modal" > -
+<article>
+    <a href="#close"
+    aria-label="Close"
+    class="close"
+    data-target="modal"
+    onclick="toggleModal(event)">
+</a>
+<h3>some message</h3>
+<p>
+    place holder for some massage
+</p>
+<footer>
+    <a href="#cancel"
+    role="button"
+    class="secondary"
+    data-target="modal"
+    onclick="togleModal(event)">
+    Cancel
+</a>
+<a href="#confirm"
+    role="button"
+    class="secondary"
+    data-target="modal"
+    onclick="togleModal(event)">
+    Confirm
+</a>
+</footer>
+</article>
+</dialog>
+
+</main>
 
 </body>
 
