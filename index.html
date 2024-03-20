@@ -27,10 +27,14 @@
 
     </header>
     <main>
-        <!-- Dropdown for selecting animal type -->
-        <select id="animalType">
-            <option value="dog">Dog</option>
-            <option value="cat">Cat</option>
+        <div class="selector">
+            <select id="animalType" name="select" aria-label="Select" required>
+                <option selected disabled value="">Select your animal</option>
+                    <option value="dog">Dog</option>
+                    <option value="cat">Cat</option>
+      
+              </select>
+        
         </select>
         <!-- Button for name generation -->
         <button onclick="generateName()">Generate Random Name</button>
