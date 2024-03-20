@@ -46,6 +46,14 @@ function updateUI() {
 // Generates names based on the selected animal type
 function generateName() {
     const animalType = document.getElementById('animalType').value;
+    const generateButton = document.getElementById('generateButton');
+    if (animalType !== 'dog' && animalType !== 'cat') {
+        generateButton.classList.add('pulse');
+        return;
+    } else {
+        generateButton.classList.remove('pulse');
+    }
+
     // Sets a request to Randommer API
     const xhr = new XMLHttpRequest();
     const url = `https://randommer.io/api/Name?nameType=fullname&quantity=5`;
