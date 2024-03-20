@@ -17,16 +17,43 @@
             <a href="#about-us" target="_top">About us</a>
         </nav>
 
-        <button type="findPet">Find your PAWfect Pet!</button>
-
-        <h1>Pawfinder</h1>
         <br>
+
         <div id="pawfect">
-            <H1>Find your PAWfect Pet!</H1>
+            <h1>Pick your animal!</h1>
         </div>
+
+        
 
     </header>
     <main>
+        <!-- Dropdown for selecting animal type -->
+        <select id="animalType">
+            <option value="dog">Dog</option>
+            <option value="cat">Cat</option>
+        </select>
+        <!-- Button for name generation -->
+        <button onclick="generateName()">Generate Random Name</button>
+        <!-- Button for finding your breed -->
+        <button>Find Your Breed</button>
+        <!-- List where generated names will show -->
+        <ul id="nameList"></ul>
+
+
+        <div class="selector">
+            <select id="select" name="select" aria-label="Select" required>
+                <option selected disabled value="">Select Breed</option>
+                <option id="dog-option"></option>
+      
+              </select>
+              
+    
+              <img src="" class="dog-img show">
+        </div>
+
+        </section>
+
+
         <section id="video-and-images">
             <div id="video-container">
 
@@ -36,30 +63,8 @@
                     allowfullscreen></iframe>
             </div>
 
-        <!-- Dropdown for selecting animal type -->
-        <select id="animalType">
-            <option value="dog">Dog</option>
-            <option value="cat">Cat</option>
-        </select>
-        <!-- Button for name generation -->
-        <button onclick="generateName()">Generate Random Name</button>
-        <!-- List where generated names will show -->
-        <ul id="nameList"></ul>
-
-        </section>
-
-
-    <div class="selector">
-        <select id="select" name="select" aria-label="Select" required>
-            <option selected disabled value="">Select Breed</option>
-            <option id="dog-option"></option>
   
           </select>
-          
-
-          <img src="" class="dog-img show">
-    </div>
-
 
     </main>
     
