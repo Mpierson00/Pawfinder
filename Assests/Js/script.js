@@ -41,6 +41,18 @@ function updateUI() {
         listItem.textContent = name;
         list.appendChild(listItem);
     });
+    if (names.length >= 5) {
+        const deleteButton = document.createElement('button');
+        deleteButton.textContent = 'Delete List';
+        deleteButton.onclick = deleteList;
+        list.appendChild(deleteButton);
+    }
+}
+
+function deleteList() {
+    names = [];
+    localStorage.setItem('names', JSON.stringify(names));
+    updateUI();
 }
 
 // Generates names based on the selected animal type
@@ -136,44 +148,6 @@ img.addEventListener('load', function () {
 });
 
 
-// //modal button mecanics
-// function TogglebtnEvent() {
-//     document.getElementById('btn').click();
-// }
-// const btnEl = document.querySelector('.btn');
-// btnEl.addEventListener('click', () => {
-//     btnEl.classList.toggle('token: force');
-// })
-// const myBtn = document.getElementById("btn");
-// myBtn.addEventListener('click', function(e){
-//     const name = prompt ('what is your name')
-//    document.body.innerHTML = "<h1> Welcome, " + name + "!</hi>";
-// });
-
-const myBtn = document.getElementById("btn");
-
-myBtn.addEventListener('click', function (e) {
-    const name = prompt('What is your name?');
-    document.body.innerHTML = "<h1>Welcome, " + name + "!</h1>";
-
-    // Create a back button
-    const backButton = document.createElement('button');
-    backButton.textContent = 'Go Back';
-    backButton.addEventListener('click', function () {
-        // history.back(); // Go back to the previous page
-        document.location.href = ("http://127.0.0.1:5500/Pawfinder/index.html")
-    });
-    document.body.appendChild(backButton);
-});
-
-const slider = document.getElementById('contrastSlider');
-const output = document.getElementById('sliderValue');
-output.innerHTML = slider.value; // Display the default slider value
-
-// Update the current slider value (each time you drag the slider handle)
-slider.oninput = function () {
-    output.innerHTML = this.value;
-}
 
 
 
