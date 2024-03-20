@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pawfinder</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
+    <link rel="stylesheet" src="./Assests/Css/style.css">
 </head>
 
 <body>
@@ -16,16 +17,39 @@
             <a href="#about-us" target="_top">About us</a>
         </nav>
 
-        <button type="findPet">Find your PAWfect Pet!</button>
-
-        <h1>Pawfinder</h1>
         <br>
+
         <div id="pawfect">
-            <H1>Find your PAWfect Pet!</H1>
+            <h1>Pick your animal!</h1>
         </div>
+
+        
 
     </header>
     <main>
+        <!-- Dropdown for selecting animal type -->
+        <select id="animalType">
+            <option value="dog">Dog</option>
+            <option value="cat">Cat</option>
+        </select>
+        <!-- Button for name generation -->
+        <button onclick="generateName()">Generate Random Name</button>
+        <!-- Button for finding your breed -->
+        <button>Find Your Breed</button>
+        <!-- List where generated names will show -->
+        <ul id="nameList"></ul>
+
+        <div class="selector">
+            <select id="select" name="select" aria-label="Select" required>
+                <option selected disabled value="">Select Breed</option>
+                <option id="dog-option"></option>
+      
+              </select>
+              
+    
+              <img src="" class="dog-img show">
+        </div>
+
         <section id="video-and-images">
             <div id="video-container">
 
@@ -35,39 +59,22 @@
                     allowfullscreen></iframe>
             </div>
 
-        <!-- Dropdown for selecting animal type -->
-        <select id="animalType">
-            <option value="dog">Dog</option>
-            <option value="cat">Cat</option>
-        </select>
-        <!-- Button for name generation -->
-        <button onclick="generateName()">Generate Random Name</button>
-        <!-- List where generated names will show -->
-        <ul id="nameList"></ul>
-
-
+        
 
         </section>
 
+
+    
+
+
     </main>
-
     
-    
-<script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
-<script src="/Assests/Js/script.js"></script>
-
     <footer>
         <div id="about-us">Disclaimer: We are not associated with pawfinders.com. This website is only for educational
             purposes.</div>
-    </footer>
-
-</body>
-
-
-                
+        </footer>
         
-        
-
-<script src="./Assests/Js/script.js"></script>
-</main>
-</html>
+        <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+        <script src="./Assests/Js/script.js"></script>
+    </body>
+        </html>
