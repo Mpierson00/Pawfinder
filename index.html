@@ -10,88 +10,63 @@
 </head>
 
 <body>
+    <header>
+        <nav>
+            <a href="#home">Home</a>
+            <h1>PawFinder</h1>
+            <a href="#about-us" target="_top">About us</a>
+        </nav>
 
-  <header>
-    <nav>
-      <a href="#home">Home</a>
-      <h1>PawFinder</h1>
-      <a href="#about-us" target="_top">About us</a>
-    </nav>
+        <br>
 
-    <br>
+        <div id="pawfect">
+            <h1>Pick your animal!</h1>
+        </div>
 
-    <div id="pawfect">
-      <h1>Pick your animal!</h1>
-    </div>
+        
 
-
-
-  </header>
-  <main>
-    <!-- Dropdown for selecting animal type -->
-    <select id="animalType">
-      <option value="dog">Dog</option>
-      <option value="cat">Cat</option>
-    </select>
-    <!-- Button for name generation -->
-    <button onclick="generateName()">Generate Random Name</button>
-    <!-- Button for finding your breed -->
-
-
-    <!--BUtton to select breed-->
-
-
-    <button data-target="modal-example" onclick="toggleModal(event)">
-      Find Breed
-    </button>
-
-    <!-- Modal -->
-
-    <dialog id="modal-example">
-      <article>
-        <header>
-          <button aria-label="Close" rel="prev" data-target="modal-example" onclick="toggleModal(event)"></button>
-          <h3>Confirm your action!</h3><br>
-          <select id="select" name="select" aria-label="Select" required>
-            <option selected disabled value="">Select Breed</option>
-            <option id="dog-option"></option>
-
-          </select>
-
-
-
-          <img src="" class="dog-img show">
-        </header>
-
-
+    </header>
+    <main>
+      <!-- Animal selector -->
+        <div class="selector">
+            <select id="animalType" name="select" aria-label="Select" required>
+                <option selected disabled value="">Select your animal</option>
+                    <option value="dog">Dog</option>
+                    <option value="cat">Cat</option>
+      
+              </select>
+        
         </select>
-        <footer>
-
-          <button autofocus data-target="modal-example" onclick="toggleModal(event)">
-            Go back
-          </button>
-        </footer>
-      </article>
-    </dialog>
+        <!-- Button for name generation -->
+        <button id="generateButton" onclick="generateName()">Generate Random Name</button>
+        <!-- Button for finding your breed -->
+        <button>Find Your Breed</button>
+        <!-- List where generated names will show -->
+        <ul id="nameList"></ul>
 
 
-    <!--  Modal Exit-->
+        <div class="selector">
+            <select id="select" name="select" aria-label="Select" required>
+                <option selected disabled value="">Select Breed</option>
+                <option id="dog-option"></option>
+      
+              </select>
+              
+    
+              <img src="" class="dog-img show">
+        </div>
+
+        </section>
 
 
-    <!-- List where generated names will show -->
-    <ul id="nameList"></ul>
+        <section id="video-and-images">
+            <div id="video-container">
 
-
-
-    <section id="video-and-images">
-      <div id="video-container">
-
-        <iframe width="742" height="480" src="https://www.youtube.com/embed/dXFSlbm2ahk"
-          title="Golden Retriever Meets New Tiny Kitten for the First Time!" frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          allowfullscreen></iframe>
-      </div>
-
+                <iframe width="742" height="480" src="https://www.youtube.com/embed/dXFSlbm2ahk"
+                    title="Golden Retriever Meets New Tiny Kitten for the First Time!" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen></iframe>
+            </div>
 
       </select>
 
