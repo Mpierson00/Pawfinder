@@ -50,7 +50,7 @@ function generateName() {
     const xhr = new XMLHttpRequest();
     const url = `https://randommer.io/api/Name?nameType=fullname&quantity=5`;
     xhr.open("GET", url);
-    xhr.setRequestHeader("X-Api-Key", '9b34620ed8f641d8a0b25f4c7b71700e');
+    xhr.setRequestHeader("X-Api-Key", 'e743dc30afe74b2ea1d3f40295e671ae');
     xhr.setRequestHeader("Accept", "application/json");
     xhr.onreadystatechange = function () {
         if (xhr.readyState === 4 && xhr.status === 200) {
@@ -72,6 +72,61 @@ function generateName() {
 updateUI();
 
 
+fetch("https://dog.ceo/api/breeds/list/all")
+    .then(function (response) {
+        return response.json()
+    })
+    .then(function (data) {
+        console.log(data.message)
+
+
+        var breedsObject = data.message
+        var breedsArray = Object.keys(breedsObject)
+
+        for (var i = 0; i < breedsArray.length; i++) {
+            const option = document.createElement('option');
+            option.value = breedsArray[i];
+            option.innerText = breedsArray[i];
+            select.appendChild(option);
+
+        }
+
+    })
+
+
+
+$("#select").on("change", function showImage(e) {
+
+
+    let url = (`https://dog.ceo/api/breed/${e.target.value}/images/random`)
+
+
+    console.log(url)
+    getDoggo(url)
+})
+
+
+
+const img = document.querySelector('.dog-img');
+
+const getDoggo = function (url) {
+
+    img.classList.remove('show')
+
+    fetch(url)
+        .then(function (response) {
+            return response.json()
+        })
+        .then(function (data) {
+            img.src = data.message
+        })
+}
+
+
+img.addEventListener('load', function () {
+    img.classList.add('show');
+});
+
 
 // //modal button mecanics
 // function TogglebtnEvent() {
@@ -89,16 +144,28 @@ updateUI();
 
 const myBtn = document.getElementById("btn");
 
-myBtn.addEventListener('click', function(e) {
+myBtn.addEventListener('click', function (e) {
     const name = prompt('What is your name?');
     document.body.innerHTML = "<h1>Welcome, " + name + "!</h1>";
-    
+
     // Create a back button
     const backButton = document.createElement('button');
     backButton.textContent = 'Go Back';
-    backButton.addEventListener('click', function() {
+    backButton.addEventListener('click', function () {
         // history.back(); // Go back to the previous page
         document.location.href = ("http://127.0.0.1:5500/Pawfinder/index.html")
     });
     document.body.appendChild(backButton);
 });
+
+const slider = document.getElementById('contrastSlider');
+const output = document.getElementById('sliderValue');
+output.innerHTML = slider.value; // Display the default slider value
+
+// Update the current slider value (each time you drag the slider handle)
+slider.oninput = function () {
+    output.innerHTML = this.value;
+}
+
+
+
