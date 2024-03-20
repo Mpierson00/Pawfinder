@@ -1,34 +1,34 @@
- 
-var dogs = 'golden retriever'
 
-$.ajax({
-    method: 'GET',
-    url: 'https://api.api-ninjas.com/v1/dogs?name=' + dogs,
-    headers: { 'X-Api-Key': 'xCK+HYspJgfwkDvJB6yLZw==r7TwaSDfMZ6tGJdy' },
-    contentType: 'application/json',
-    success: function (result) {
-        console.log(result);
-    },
-    error: function ajaxError(jqXHR) {
-        console.error('Error: ', jqXHR.responseText);
-    }
-});
+// var dogs = 'golden retriever'
+
+// $.ajax({
+//     method: 'GET',
+//     url: 'https://api.api-ninjas.com/v1/dogs?name=' + dogs,
+//     headers: { 'X-Api-Key': 'xCK+HYspJgfwkDvJB6yLZw==r7TwaSDfMZ6tGJdy' },
+//     contentType: 'application/json',
+//     success: function (result) {
+//         console.log(result);
+//     },
+//     error: function ajaxError(jqXHR) {
+//         console.error('Error: ', jqXHR.responseText);
+//     }
+// });
 
 
-var cats = 'Persian'
+// var cats = 'Persian'
 
-$.ajax({
-    method: 'GET',
-    url: 'https://api.api-ninjas.com/v1/cats?name=' + cats,
-    headers: { 'X-Api-Key': '3/8KnKGZULoO/khwD+e4CQ==pfReAK4gai6UoGzO' },
-    contentType: 'application/json',
-    success: function (result) {
-        console.log(result);
-    },
-    error: function ajaxError(jqXHR) {
-        console.error('Error: ', jqXHR.responseText);
-    }
-});
+// $.ajax({
+//     method: 'GET',
+//     url: 'https://api.api-ninjas.com/v1/cats?name=' + cats,
+//     headers: { 'X-Api-Key': '3/8KnKGZULoO/khwD+e4CQ==pfReAK4gai6UoGzO' },
+//     contentType: 'application/json',
+//     success: function (result) {
+//         console.log(result);
+//     },
+//     error: function ajaxError(jqXHR) {
+//         console.error('Error: ', jqXHR.responseText);
+//     }
+// });
 
 let names = JSON.parse(localStorage.getItem('names')) || [];
 
@@ -41,11 +41,31 @@ function updateUI() {
         listItem.textContent = name;
         list.appendChild(listItem);
     });
+    if (names.length >= 5) {
+        const deleteButton = document.createElement('button');
+        deleteButton.textContent = 'Delete List';
+        deleteButton.onclick = deleteList;
+        list.appendChild(deleteButton);
+    }
+}
+
+function deleteList() {
+    names = [];
+    localStorage.setItem('names', JSON.stringify(names));
+    updateUI();
 }
 
 // Generates names based on the selected animal type
 function generateName() {
     const animalType = document.getElementById('animalType').value;
+    const generateButton = document.getElementById('generateButton');
+    if (animalType !== 'dog' && animalType !== 'cat') {
+        generateButton.classList.add('pulse');
+        return;
+    } else {
+        generateButton.classList.remove('pulse');
+    }
+
     // Sets a request to Randommer API
     const xhr = new XMLHttpRequest();
     const url = `https://randommer.io/api/Name?nameType=fullname&quantity=5`;
@@ -71,7 +91,7 @@ function generateName() {
 
 updateUI();
 
-
+//Fetch GET request for list of dogs names without spaces
 fetch("https://dog.ceo/api/breeds/list/all")
     .then(function (response) {
         return response.json()
@@ -93,14 +113,10 @@ fetch("https://dog.ceo/api/breeds/list/all")
 
     })
 
-
+//event listner with event target value 
 
 $("#select").on("change", function showImage(e) {
-
-
     let url = (`https://dog.ceo/api/breed/${e.target.value}/images/random`)
-
-
     console.log(url)
     getDoggo(url)
 })
@@ -127,45 +143,84 @@ img.addEventListener('load', function () {
     img.classList.add('show');
 });
 
+//MODAL
+// Config
+const isOpenClass = "modal-is-open";
+const openingClass = "modal-is-opening";
+const closingClass = "modal-is-closing";
+const scrollbarWidthCssVar = "--pico-scrollbar-width";
+const animationDuration = 400; // ms
+let visibleModal = null;
 
-// //modal button mecanics
-// function TogglebtnEvent() {
-//     document.getElementById('btn').click();
-// }
-// const btnEl = document.querySelector('.btn');
-// btnEl.addEventListener('click', () => {
-//     btnEl.classList.toggle('token: force');
-// })
-// const myBtn = document.getElementById("btn");
-// myBtn.addEventListener('click', function(e){
-//     const name = prompt ('what is your name')
-//    document.body.innerHTML = "<h1> Welcome, " + name + "!</hi>";
-// });
+// Toggle modal
+const toggleModal = (event) => {
+    event.preventDefault();
+    const modal = document.getElementById(event.currentTarget.dataset.target);
+    if (!modal) return;
+    modal && (modal.open ? closeModal(modal) : openModal(modal));
+};
 
-const myBtn = document.getElementById("btn");
+// Open modal
+const openModal = (modal) => {
+    const { documentElement: html } = document;
+    const scrollbarWidth = getScrollbarWidth();
+    if (scrollbarWidth) {
+        html.style.setProperty(scrollbarWidthCssVar, `${scrollbarWidth}px`);
+    }
+    html.classList.add(isOpenClass, openingClass);
+    setTimeout(() => {
+        visibleModal = modal;
+        html.classList.remove(openingClass);
+    }, animationDuration);
+    modal.showModal();
+};
 
-myBtn.addEventListener('click', function (e) {
-    const name = prompt('What is your name?');
-    document.body.innerHTML = "<h1>Welcome, " + name + "!</h1>";
+// Close modal
+const closeModal = (modal) => {
+    visibleModal = null;
+    const { documentElement: html } = document;
+    html.classList.add(closingClass);
+    setTimeout(() => {
+        html.classList.remove(closingClass, isOpenClass);
+        html.style.removeProperty(scrollbarWidthCssVar);
+        modal.close();
+    }, animationDuration);
+};
 
-    // Create a back button
-    const backButton = document.createElement('button');
-    backButton.textContent = 'Go Back';
-    backButton.addEventListener('click', function () {
-        // history.back(); // Go back to the previous page
-        document.location.href = ("http://127.0.0.1:5500/Pawfinder/index.html")
-    });
-    document.body.appendChild(backButton);
+// Close with a click outside
+document.addEventListener("click", (event) => {
+    if (visibleModal === null) return;
+    const modalContent = visibleModal.querySelector("article");
+    const isClickInside = modalContent.contains(event.target);
+    !isClickInside && closeModal(visibleModal);
 });
 
-const slider = document.getElementById('contrastSlider');
-const output = document.getElementById('sliderValue');
-output.innerHTML = slider.value; // Display the default slider value
+// Close with Esc key
+document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && visibleModal) {
+        closeModal(visibleModal);
+    }
+});
 
-// Update the current slider value (each time you drag the slider handle)
-slider.oninput = function () {
-    output.innerHTML = this.value;
-}
+// Get scrollbar width
+const getScrollbarWidth = () => {
+    const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
+    return scrollbarWidth;
+};
+
+// Is scrollbar visible
+const isScrollbarVisible = () => {
+    return document.body.scrollHeight > screen.height;
+};
+
+
+
+
+//EXIT MODAL
+
+
+
+
 
 
 
