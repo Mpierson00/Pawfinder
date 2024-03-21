@@ -167,3 +167,22 @@ const isScrollbarVisible = () => {
 };
 
 //EXIT MODAL
+
+//For fetchind data for random cat facts
+var url= "https://catfact.ninja/fact"
+
+function fetcher(){
+fetch(url)
+.then(function(response){
+  return response.json()
+})
+.then(function(data){
+  console.log(data)
+ $(".cats-fact").html(`<p>"${data.fact}"</p>`)
+
+})
+
+}
+// Event listner
+$(window).on("load",fetcher)
+$(".clicker").on("click", fetcher)
