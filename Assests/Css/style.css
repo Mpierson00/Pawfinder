@@ -1,8 +1,12 @@
+
 /* Body styling */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-image: linear-gradient(#2e7071, #FFFFFF);
     text-align: center;
+} 
+.paw {
+    color: #2e7071;
 }
 
 /* Navigation Bar Styling */
