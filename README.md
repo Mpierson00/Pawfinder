@@ -20,8 +20,8 @@ PawFinder is an engaging web application designed to assist pet enthusiasts in d
 
 1. Generating a Pet Name:
 
-- Navigate to the 'Pick Your Animal' section.
-- Select the type of animal (dog or cat) from the dropdown.
+- Navigate to the 'Pick Your Pet' section.
+- Select the type of pet (dog or cat) from the dropdown.
 - Click on 'Generate Random Name' to see a list of names.
 2. Finding Dog Breeds:
 
