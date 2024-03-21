@@ -189,3 +189,33 @@ button {
     max-height: 60%
 }
 
+.cats-fact{
+    border: 2px solid black;
+    border-radius: 20px;
+    text-align: center;
+    margin-top:20px;
+    margin-left: 140px;
+    width: 80%;
+    
+}
+button.clicker{
+  margin-left:50px;
+  margin-top: 20px;
+}
+
+#cat, #cath2{
+    color:black;
+}
+
+.fact{
+    margin-top: 50px;
+   
+}
+
+#img-cat{
+    width: 50%;
+}
+
+#nameList li{
+  list-style-type: none;
+}
