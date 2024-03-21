@@ -2,12 +2,11 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pawfinder</title>
-   <link rel="stylesheet" href="./Assests/Css/style.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
-    <link rel="stylesheet" src="./Assests/Css/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pawfinder</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
+  <link rel="stylesheet" href="./Assests/Css/style.css">
 </head>
 
 <body>
@@ -18,16 +17,48 @@
             <a href="#about-us" target="_top">About us</a>
         </nav>
 
-        <button type="findPet">Find your PAWfect Pet!</button>
-
-        <h1>Pawfinder</h1>
         <br>
+
         <div id="pawfect">
-            <H1>Find your PAWfect Pet!</H1>
+            <h1>Pick your animal!</h1>
         </div>
+
+        
 
     </header>
     <main>
+      <!-- Animal selector -->
+        <div class="selector">
+            <select id="animalType" name="select" aria-label="Select" required>
+                <option selected disabled value="">Select your animal</option>
+                    <option value="dog">Dog</option>
+                    <option value="cat">Cat</option>
+      
+              </select>
+        
+        </select>
+        <!-- Button for name generation -->
+        <button id="generateButton" onclick="generateName()">Generate Random Name</button>
+        <!-- Button for finding your breed -->
+        <button>Find Your Breed</button>
+        <!-- List where generated names will show -->
+        <ul id="nameList"></ul>
+
+
+        <div class="selector">
+            <select id="select" name="select" aria-label="Select" required>
+                <option selected disabled value="">Select Breed</option>
+                <option id="dog-option"></option>
+      
+              </select>
+              
+    
+              <img src="" class="dog-img show">
+        </div>
+
+        </section>
+
+
         <section id="video-and-images">
             <div id="video-container">
 
@@ -37,30 +68,7 @@
                     allowfullscreen></iframe>
             </div>
 
-        <!-- Dropdown for selecting animal type -->
-        <select id="animalType">
-            <option value="dog">Dog</option>
-            <option value="cat">Cat</option>
-        </select>
-        <!-- Button for name generation -->
-        <button onclick="generateName()">Generate Random Name</button>
-        <!-- List where generated names will show -->
-        <ul id="nameList"></ul>
-
-        </section>
-
-
-    <div class="selector">
-        <select id="select" name="select" aria-label="Select" required>
-            <option selected disabled value="">Select Breed</option>
-            <option id="dog-option"></option>
-  
-          </select>
-          
-
-          <img src="" class="dog-img show">
-    </div>
-
+      </select>
 
     </main>
     

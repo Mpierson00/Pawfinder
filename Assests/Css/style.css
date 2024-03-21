@@ -1,5 +1,191 @@
+
+/* Body styling */
 body {
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    background-image: linear-gradient(#00FFFF,#FFFFFF);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-image: linear-gradient(#2e7071, #FFFFFF);
+    text-align: center;
+} 
+.paw {
+    color: #2e7071;
 }
-/* Comment */
+
+/* Navigation Bar Styling */
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 80%;
+    margin: auto;
+}
+
+.navbar {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 100%;
+    width: 100%;
+}
+
+.Header {
+    font-size: 60px;
+    color: #FFFFFF;
+    position: relative;
+    display: inline;
+    margin: 25px 150px 0 150px;
+}
+
+.homePage {
+    display: inline;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    font-weight: 500;
+    align-items: center;
+    color: #FFFFFF;
+    background-color: #383940;
+    padding: 5px 40px 5px 40px;
+    border: 2px solid #FFFFFF;
+    border-radius: 5px;
+    text-decoration: none;
+    margin: 0px;
+}
+
+.aboutUs {
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: row;
+    display: inline;
+    align-items: center;
+    font-weight: 500;
+    color: #FFFFFF;
+    background-color: #383940;
+    padding: 5px 40px 5px 40px;
+    border: 2px solid #FFFFFF;
+    border-radius: 5px;
+    text-decoration: none;
+    margin: auto;
+}
+
+/* Animal Selection Styling */
+.animalSelection {
+    background-color: #383940;
+    border-top: 2px solid #FFFFFF;
+    padding-bottom: 20px;
+}
+
+#pawfect {
+    color: #FFFFFF;
+    text-shadow: 4px 3px 3px #2e7071, 1px 1px 2px #2e7071, 1px -1px 0 #2e7071, -1px -1px 0 #2e7071;
+    align-items: center;
+    margin-top: 30px;
+    font-weight: 300;
+}
+
+.note {
+    font-size: 24px;
+    color: #FFFFFF;
+    font-weight: 100;
+}
+
+#animalType {
+    display: block;
+    text-align: center;
+    background-color: #FFFFFF;
+    max-width: 550px;
+    padding: 10px 0px 10px 0px;
+    margin-left: auto;
+    margin-right: auto;
+    border: 2px solid #FFFFFF;
+}
+
+#animalType:checked {
+    border: 5px solid #2e7071;
+}
+
+/* Random Name and Dog Breed button styling */
+#generateButton {
+    justify-content: center;
+    display: inline-block;
+    flex-wrap: wrap;
+    background-color: #2e7071;
+    color: #FFFFFF;
+    border: 3px solid #FFFFFF;
+    border-radius: 5px;
+    margin: 10px;
+}
+
+.dogBreed {
+    justify-content: center;
+    display: inline-block;
+    flex-wrap: wrap;
+    background-color: #2e7071;
+    color: #FFFFFF;
+    border: 3px solid #FFFFFF;
+    border-radius: 5px;
+    margin: 10px;
+}
+
+/* Modal Styling */
+article {
+    background-color: #383940;
+    border: none;
+}
+
+.selectBreed {
+    background-color: #383940;
+    color: #FFFFFF;
+    border: none
+}
+
+.breedText {
+    color: #FFFFFF;
+}
+
+#select {
+    background-color: #FFFFFF;
+    border: 3px solid #2e7071;
+}
+
+.modalBottom {
+    background-color: #383940;
+    border: none
+}
+
+.modalReturn {
+    background-color: #2e7071;
+    color: #FFFFFF;
+    border: 3px solid #FFFFFF;
+}
+
+/* Name List Styling */
+#nameList {
+    background-color: #383940;
+    color: #FFFFFF;
+    list-style-type: none;
+    margin-top: -21px;
+    border-bottom: 2px solid #FFFFFF;;
+    font-size: 22px;
+}
+
+button {
+    background-color: #2e7071;
+    border: 3px solid #FFFFFF;
+    margin: 20px;
+    padding: 10px;
+}
+
+/* Video Styling */
+#video-and-images {
+    justify-content: center;
+}
+
+.video {
+    justify-content: center;
+    flex-wrap: wrap;
+    max-width: 80%;
+    max-height: 60%
+}
+

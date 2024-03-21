@@ -1,35 +1,3 @@
-
-// var dogs = 'golden retriever'
-
-// $.ajax({
-//     method: 'GET',
-//     url: 'https://api.api-ninjas.com/v1/dogs?name=' + dogs,
-//     headers: { 'X-Api-Key': 'xCK+HYspJgfwkDvJB6yLZw==r7TwaSDfMZ6tGJdy' },
-//     contentType: 'application/json',
-//     success: function (result) {
-//         console.log(result);
-//     },
-//     error: function ajaxError(jqXHR) {
-//         console.error('Error: ', jqXHR.responseText);
-//     }
-// });
-
-
-// var cats = 'Persian'
-
-// $.ajax({
-//     method: 'GET',
-//     url: 'https://api.api-ninjas.com/v1/cats?name=' + cats,
-//     headers: { 'X-Api-Key': '3/8KnKGZULoO/khwD+e4CQ==pfReAK4gai6UoGzO' },
-//     contentType: 'application/json',
-//     success: function (result) {
-//         console.log(result);
-//     },
-//     error: function ajaxError(jqXHR) {
-//         console.error('Error: ', jqXHR.responseText);
-//     }
-// });
-
 let names = JSON.parse(localStorage.getItem('names')) || [];
 
 // Updates the displayed list
@@ -48,13 +16,11 @@ function updateUI() {
         list.appendChild(deleteButton);
     }
 }
-
 function deleteList() {
     names = [];
     localStorage.setItem('names', JSON.stringify(names));
     updateUI();
 }
-
 // Generates names based on the selected animal type
 function generateName() {
     const animalType = document.getElementById('animalType').value;
@@ -98,8 +64,6 @@ fetch("https://dog.ceo/api/breeds/list/all")
     })
     .then(function (data) {
         console.log(data.message)
-
-
         var breedsObject = data.message
         var breedsArray = Object.keys(breedsObject)
 
@@ -108,27 +72,18 @@ fetch("https://dog.ceo/api/breeds/list/all")
             option.value = breedsArray[i];
             option.innerText = breedsArray[i];
             select.appendChild(option);
-
         }
-
     })
 
 //event listner with event target value 
-
 $("#select").on("change", function showImage(e) {
     let url = (`https://dog.ceo/api/breed/${e.target.value}/images/random`)
     console.log(url)
     getDoggo(url)
 })
-
-
-
 const img = document.querySelector('.dog-img');
-
 const getDoggo = function (url) {
-
     img.classList.remove('show')
-
     fetch(url)
         .then(function (response) {
             return response.json()
@@ -137,8 +92,6 @@ const getDoggo = function (url) {
             img.src = data.message
         })
 }
-
-
 img.addEventListener('load', function () {
     img.classList.add('show');
 });
@@ -213,14 +166,4 @@ const isScrollbarVisible = () => {
     return document.body.scrollHeight > screen.height;
 };
 
-
-
-
 //EXIT MODAL
-
-
-
-
-
-
-
