@@ -11,30 +11,32 @@
 
 <body>
   <header>
+    <h1><span class="paw">Paw</span><span id="finder">Finder</span></h1>
     <nav>
-      <h1 class="Header">PawFinder</h1>
-      <ul class="navbar">
-      <li><a class="homePage" href="#home">Home</a></li>
-      <li><a class="aboutUs" href="#about-us" target="_top">About Us</a></li>
-    </ul>
-      <a href="#home">Home</a>
-      <h1><span class="paw">Paw</span>Finder</h1>
-      <a href="#about-us" target="_top">About us</a>
+     
+      <ul>
+        <li><a href="#" class="contrast">Home</a></li>
+        <li><a href="#fact" class="contrast">Facts</a></li>
+        <li><a href="#about-us" class="contrast">About</a></li>
+        <li><a href="#contact-us" class="contrast">Contact us</a></li>
+      </ul>
     </nav>
     <br>
   </header>
+
+
   <main>
     <section class="animalSelection">
       <div id="pawfect">
-        <h1>P I C K &nbsp;&nbsp;&nbsp;Y O U R &nbsp;&nbsp;&nbsp;A N I M A L</h1>
+        <h1>P I C K &nbsp;&nbsp;&nbsp;Y O U R &nbsp;&nbsp;&nbsp;P E T </h1>
       </div>
       <div>
-        <h4 class="note">Note: You must select an animal type before generating a name.</h4>
+        <h4 class="note">Note: You must select a pet type before generating a name.</h4>
       </div>
       <!-- Animal selector -->
       <div>
         <select id="animalType" name="select" aria-label="Select" required>
-          <option selected disabled value="">Select your animal</option>
+          <option selected disabled value="">Select your pet</option>
           <option class="animalOption" value="dog">Dog</option>
           <option class="animalOption" value="cat">Cat</option>
 
@@ -42,7 +44,7 @@
 
         </select>
         <!-- Button for name generation -->
-        <button id="generateButton" onclick="generateName()">Generate Random Name</button>
+        <button id="generateButton" onclick="generateName()">Generate Random Pet Name</button>
 
 
         <!-- Button for finding your breed -->
@@ -88,7 +90,7 @@
 
       </select>
 
-      <section class="fact">
+      <section id="fact">
         <h2 id="cat">Did you know?</h2>
         <p id="cath2">Interesting facts about cats</p>
         <img id="img-cat" src="https://cdn.pixabay.com/photo/2021/10/19/10/56/cat-6723256_1280.jpg" alt="Cute little kitten licking nose">
@@ -99,6 +101,10 @@
       </section>
 
   </main>
+
+  <section id="contact-us">
+    
+  </section>
 
   <footer>
     <div id="about-us">Disclaimer: We are not associated with pawfinders.com. This website is only for educational
