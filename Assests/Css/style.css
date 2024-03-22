@@ -5,12 +5,26 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-image: linear-gradient(#2e7071, #FFFFFF);
     text-align: center;
-} 
+}
+
 .paw {
     color: #383940;
+    font-size: 60px;
+    display: inline;
 }
-span#finder{
-    font-family:'Kranky';
+
+span#finder {
+    font-family: 'Kranky';
+    font-size: 60px;
+    color: #FFFFFF;
+    display: inline;
+}
+
+.slogan {
+    font-size: 24px;
+    font-weight: 200;
+    padding-top: 0%;
+    margin-top: 0%;
 }
 
 /* Navigation Bar Styling */
@@ -20,57 +34,19 @@ nav {
     align-items: center;
     justify-content: center;
     height: 100%;
-    width: 80%;
-    margin: auto;
-}
-
-.navbar {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    justify-content: space-between;
-    height: 100%;
     width: 100%;
-}
-
-.Header {
-    font-size: 60px;
-    color: #FFFFFF;
-    position: relative;
-    display: inline;
-    margin: 25px 150px 0 150px;
-}
-
-.homePage {
-    display: inline;
-    justify-content: center;
-    flex-direction: row;
-    flex-wrap: wrap;
-    font-weight: 500;
-    align-items: center;
-    color: #FFFFFF;
-    background-color: #383940;
-    padding: 5px 40px 5px 40px;
-    border: 2px solid #FFFFFF;
-    border-radius: 5px;
-    text-decoration: none;
-    margin: 0px;
-}
-
-.aboutUs {
-    flex-wrap: wrap;
-    justify-content: center;
-    flex-direction: row;
-    display: inline;
-    align-items: center;
-    font-weight: 500;
-    color: #FFFFFF;
-    background-color: #383940;
-    padding: 5px 40px 5px 40px;
-    border: 2px solid #FFFFFF;
-    border-radius: 5px;
-    text-decoration: none;
     margin: auto;
+}
+
+.logo {
+    display: inline;
+    height: 5%;
+    width: 5%;
+}
+
+.contrast {
+    color: #FFFFFF;
+    font-weight: 500;
 }
 
 /* Animal Selection Styling */
@@ -170,7 +146,8 @@ article {
     color: #FFFFFF;
     list-style-type: none;
     margin-top: -21px;
-    border-bottom: 2px solid #FFFFFF;;
+    border-bottom: 2px solid #FFFFFF;
+    ;
     font-size: 22px;
 }
 
@@ -193,45 +170,123 @@ button {
     max-height: 60%
 }
 
-.cats-fact{
-    border: 2px solid black;
+.cats-fact {
+    border: 3px solid #2e7071;
     border-radius: 20px;
     text-align: center;
-    margin-top:20px;
+    margin-top: 20px;
     margin-left: 140px;
     width: 80%;
-    
-}
-button.clicker{
-  margin-left:50px;
-  margin-top: 20px;
+
 }
 
-#cat, #cath2{
-    color:black;
+button.clicker {
+    margin-left: 50px;
+    margin-top: 20px;
+    margin-bottom: 50px;
 }
 
-.fact{
+#cat,
+#cath2 {
+    color: #FFFFFF;
+}
+
+.cats-fact p {
+    color: #383940;
+    padding: 0px 10px 0px 10px;
+    font-weight: 300;
+}
+
+.fact {
     margin-top: 50px;
-   
 }
 
-#img-cat{
+#img-cat {
     width: 50%;
 }
 
-#nameList li{
-  list-style-type: none;
+#nameList li {
+    list-style-type: none;
 }
 
-#feedback{
-        justify-content: center;
-        display: inline-block;
-        flex-wrap: wrap;
-        background-color: #2e7071;
-        color: #FFFFFF;
-        border: 3px solid #FFFFFF;
-        border-radius: 5px;
-        margin: 10px;
-        width: 50%;
-    }
+#feedback {
+    justify-content: center;
+    display: inline-block;
+    flex-wrap: wrap;
+    background-color: #2e7071;
+    color: #FFFFFF;
+    border: 3px solid #383940;
+    border-radius: 5px;
+    margin: 10px;
+    width: 80%;
+}
+
+.feedbackTitle {
+    margin-top: 20px;
+}
+
+.comments {
+    margin-top: 20px;
+}
+
+.firstName, 
+.comments, 
+.feedbackEmail {
+    background-color: #383940;
+    max-width: 60%;
+    display: inline-block;
+}
+
+
+.submit {
+    background-color: #383940;
+    max-width: 40%;
+    border: 3px solid #FFFFFF;
+}
+
+.aboutUssection {
+    color: #383940;
+}
+
+.michael {
+    color: #383940;
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 2;
+}
+
+.juju {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 2;
+    grid-row-end: 3;
+}
+
+.bailey {
+    grid-column-start: 3;
+    grid-column-end: 4;
+    grid-row-start: 2;
+    grid-row-end: 3;
+}
+
+.jose {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 1;
+    grid-row-end: 2;
+}
+
+.rafael {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 2;
+    grid-row-end: 3;
+}
+
+.emails {
+    grid-column-start: 3;
+    grid-column-end: 4;
+    grid-row-start: 1;
+    grid-row-end: 2;
+}
