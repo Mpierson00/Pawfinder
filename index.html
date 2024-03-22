@@ -11,9 +11,10 @@
 
 <body>
   <header>
+    <img class=logo src="Assests/Images/Logo dark background.png" alt="PawFinder Logo">
     <h1><span class="paw">Paw</span><span id="finder">Finder</span></h1>
+    <h2 class="slogan">"PAWSitively good vibes"</h2>
     <nav>
-     
       <ul>
         <li><a href="#" class="contrast">Home</a></li>
         <li><a href="#fact" class="contrast">Facts</a></li>
@@ -23,8 +24,6 @@
     </nav>
     <br>
   </header>
-
-
   <main>
     <section class="animalSelection">
       <div id="pawfect">
@@ -56,7 +55,7 @@
 
     <dialog id="modal-example">
       <article>
-        <header class="selectBreed" >
+        <header class="selectBreed">
           <button aria-label="Close" rel="prev" data-target="modal-example" onclick="toggleModal(event)"></button>
           <h3 class="breedText">Select your breed!</h3><br>
           <select id="select" name="select" aria-label="Select" required>
@@ -78,87 +77,104 @@
     </section>
     <!-- List where generated names will show -->
     <ul id="nameList"></ul>
+    </select>
+    <section id="fact">
+      <h2 id="cat">DID YOU KNOW...</h2>
+      <p id="cath2">Interesting facts about cats</p>
+      <img id="img-cat" src="https://cdn.pixabay.com/photo/2021/10/19/10/56/cat-6723256_1280.jpg"
+        alt="Cute little kitten licking nose">
+      <div class="cats-fact"></div>
+      <button class="clicker">Click me for for more cat facts</button>
 
-    <section id="video-and-images">
-      <div id="video-container">
+      <section id="video-and-images">
+        <div id="video-container">
 
-        <iframe class="video" width="742" height="480" src="https://www.youtube.com/embed/dXFSlbm2ahk?&autoplay=1"
-          title="Golden Retriever Meets New Tiny Kitten for the First Time!" frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          allowfullscreen></iframe>
-      </div>
-
-      </select>
-
-      <section id="fact">
-        <h2 id="cat">Did you know?</h2>
-        <p id="cath2">Interesting facts about cats</p>
-        <img id="img-cat" src="https://cdn.pixabay.com/photo/2021/10/19/10/56/cat-6723256_1280.jpg" alt="Cute little kitten licking nose">
-        <div class="cats-fact"></div>
-        
-        <button class="clicker">Click me for for more cat facts</button>
-
+          <iframe class="video" width="742" height="480" src="https://www.youtube.com/embed/dXFSlbm2ahk?&autoplay=1"
+            title="Golden Retriever Meets New Tiny Kitten for the First Time!" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen></iframe>
+        </div>
       </section>
 
   </main>
 
-  <section id="contact-us">
-    
-  </section>
-
   <section id="feedback">
-    <h2>Feedback</h2>
+    <h2 class="feedbackTitle">Feedback</h2>
     <p>Please provide your feedback in the form below</p>
-   
-      <legend>How do you rate your overall experience?</legend>
-      <input type="radio" id="hindi" name="second-language" />
-      <label htmlFor="hindi">Bad</label>
-      <input type="radio" id="swahili" name="second-language" />
-      <label htmlFor="swahili">Good</label>
-      <input type="radio" id="navi" name="second-language"  />
-      <label htmlFor="navi" aria-disabled="true">Excellent</label>
+
+    <legend>How do you rate your overall experience?</legend>
+    <input type="radio" id="hindi" name="second-language" />
+    <label htmlFor="hindi">Bad</label>
+    <input type="radio" id="swahili" name="second-language" />
+    <label htmlFor="swahili">Good</label>
+    <input type="radio" id="navi" name="second-language" />
+    <label htmlFor="navi" aria-disabled="true">Excellent</label>
     </fieldset><br>
 
-    <textarea
-  name="Cpmments"
-  placeholder="Comments"
-  aria-label="Professional short bio"
->
+    <textarea class="comments" name="Cpmments" placeholder="Comments" aria-label="Professional short bio">
 </textarea>
-<form>
-  <fieldset>
-    <label>
-      First name
-      <input
-        name="first_name"
-        placeholder="First name"
-        autocomplete="given-name"
-      />
-    </label>
-    <label>
-      Email
-      <input
-        type="email"
-        name="email"
-        placeholder="Email"
-        autocomplete="email"
-      />
-      <button
-      type="submit">Send</button>
-    </label>
-  </fieldset>
+    <form>
+      <fieldset>
+        <label>
+          <p>First name</p>
+          <input class="firstName" name="first_name" placeholder="First name" autocomplete="given-name" />
+        </label>
+        <label>
+          <p>Email</p>
+          <input class=feedbackEmail type="email" name="email" placeholder="Email" autocomplete="email" />
+          <button class="submit" type="submit">Send</button>
+        </label>
+      </fieldset>
 
- 
-</form>
- 
+
+    </form>
+
   </section>
 
   <footer>
-    <div id="about-us">Disclaimer: We are not associated with pawfinders.com. This website is only for educational
-      purposes.</div>
+    <div id="about-us">
+      <div class="aboutUssection">
+        <div class="michael">
+          <h3>Michael Pierson</h3>
+          <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Libero, architecto dolore! Nostrum asperiores
+            distinctio nobis, minus doloremque ex dolores, eligendi numquam illum, quas deserunt ad atque pariatur sequi
+            corporis sint.</p>
+        </div>
+        <div class="juju">
+          <h3>Juju Nakarmi</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex, deleniti, illo expedita, perspiciatis et
+            saepe esse a earum iste error quos! Libero fuga officia corporis alias quibusdam animi quasi. In?</p>
+        </div>
+        <div class="bailey">
+          <h3>Bailey Ellison</h3>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem, architecto obcaecati! Expedita ipsa quas
+            architecto nam non reprehenderit, aut tenetur, eveniet totam molestiae minima maxime facere ea? Laudantium,
+            ipsa laboriosam.</p>
+        </div>
+        <div class="jose">
+          <h3>Jose De Los Santos Oliver</h3>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum hic repudiandae ducimus modi, temporibus
+            dolore, praesentium ad cumque in eligendi nobis rem? Libero voluptas quasi, minus reprehenderit
+            necessitatibus possimus officiis.</p>
+        </div>
+        <div class="rafael">
+          <h3>Rafael Mendano</h3>
+          <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Optio quisquam quo exercitationem sit repellat
+            culpa unde. Distinctio quam maxime dolores similique cum aspernatur, ullam perspiciatis laboriosam
+            reprehenderit enim. Quo, quis.</p>
+        </div>
+        <section id="contact-us">
+          <div class="emails">
+            <h3>Emails</h3>
+          </div>
+        </section>
+      </div>
+      <p>Disclaimer: We are not associated with pawfinders.com. This website is only for educational
+        purposes.</p>
+    </div>
   </footer>
 
- 
+
 
   <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
     crossorigin="anonymous"></script>
