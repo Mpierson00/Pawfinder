@@ -223,3 +223,15 @@ button.clicker{
 #nameList li{
   list-style-type: none;
 }
+
+#feedback{
+        justify-content: center;
+        display: inline-block;
+        flex-wrap: wrap;
+        background-color: #2e7071;
+        color: #FFFFFF;
+        border: 3px solid #FFFFFF;
+        border-radius: 5px;
+        margin: 10px;
+        width: 50%;
+    }
