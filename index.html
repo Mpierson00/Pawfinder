@@ -24,33 +24,29 @@
     </nav>
     <br>
   </header>
+
   <main>
     <section class="animalSelection">
-      <div id="pawfect">
+      <header id="pawfect">
         <h1>P I C K &nbsp;&nbsp;&nbsp;Y O U R &nbsp;&nbsp;&nbsp;P E T </h1>
-      </div>
-      <div>
-        <h4 class="note">Note: You must select a pet type before generating a name.</h4>
-      </div>
+      </header>
+      <h4 class="note">Note: You must select a pet type before generating a name.</h4>
       <!-- Animal selector -->
-      <div>
-        <select id="animalType" name="select" aria-label="Select" required>
-          <option selected disabled value="">Select your pet</option>
-          <option class="animalOption" value="dog">Dog</option>
-          <option class="animalOption" value="cat">Cat</option>
+      <select id="animalType" name="select" aria-label="Select" required>
+        <option selected disabled value="">Select your pet</option>
+        <option class="animalOption" value="dog">Dog</option>
+        <option class="animalOption" value="cat">Cat</option>
+      </select>
 
-        </select>
+      <!-- Button for name generation -->
+      <button id="generateButton" onclick="generateName()">Generate Random Pet Name
+      </button>
 
-        </select>
-        <!-- Button for name generation -->
-        <button id="generateButton" onclick="generateName()">Generate Random Pet Name</button>
-
-
-        <!-- Button for finding your breed -->
-        <!-- Modal -->
-        <button class="dogBreed" data-target="modal-example" onclick="toggleModal(event)">
-          Find Dog Breed
-        </button>
+      <!-- Button for finding your breed -->
+      <!-- Modal -->
+      <button class="dogBreed" data-target="modal-example" onclick="toggleModal(event)">
+        Find Dog Breed
+      </button>
     </section>
 
     <dialog id="modal-example">
@@ -61,12 +57,9 @@
           <select id="select" name="select" aria-label="Select" required>
             <option selected disabled value="">Select Breed</option>
             <option id="dog-option"></option>
-
           </select>
           <img src="" class="dog-img show">
         </header>
-
-        </select>
         <footer class="modalBottom">
           <button class="modalReturn" autofocus data-target="modal-example" onclick="toggleModal(event)">
             Go Back
@@ -74,7 +67,7 @@
         </footer>
       </article>
     </dialog>
-    </section>
+
     <!-- List where generated names will show -->
     <ul id="nameList"></ul>
     </select>
@@ -94,10 +87,11 @@
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             allowfullscreen></iframe>
         </div>
+
       </section>
-
   </main>
-
+  <section id="contact-us">
+  </section>
   <section id="feedback">
     <h2 class="feedbackTitle">Feedback</h2>
     <p>Please provide your feedback in the form below</p>
@@ -125,8 +119,6 @@
           <button class="submit" type="submit">Send</button>
         </label>
       </fieldset>
-
-
     </form>
 
   </section>
@@ -173,8 +165,6 @@
         purposes.</p>
     </div>
   </footer>
-
-
 
   <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
     crossorigin="anonymous"></script>
