@@ -1,14 +1,18 @@
+// initialize an array to store pet names
 let names = JSON.parse(localStorage.getItem('names')) || [];
 
 // Updates the displayed list
 function updateUI() {
     const list = document.getElementById('nameList');
-    list.innerHTML = '';
+    list.innerHTML = ''; //clear the list
+
+    //Creates a list item for each name over the names array
     names.forEach(name => {
         const listItem = document.createElement('li');
         listItem.textContent = name;
-        list.appendChild(listItem);
+        list.appendChild(listItem); //Append the list item to the list
     });
+    //If there are 5 or more names, add delete list button to the list
     if (names.length >= 5) {
         const deleteButton = document.createElement('button');
         deleteButton.textContent = 'Delete List';
@@ -16,28 +20,33 @@ function updateUI() {
         list.appendChild(deleteButton);
     }
 }
+//clear the names list
 function deleteList() {
-    names = [];
+    names = []; //Clear the names array
     localStorage.setItem('names', JSON.stringify(names));
-    updateUI();
+    updateUI(); //Refresh the UI
 }
 // Generates names based on the selected animal type
 function generateName() {
-    const animalType = document.getElementById('animalType').value;
+    const animalTypeSelect = document.getElementById('animalType');
+    const animalType = animalTypeSelect.value;
     const generateButton = document.getElementById('generateButton');
+    //If the animal type is not selected, show an error and return
     if (animalType !== 'dog' && animalType !== 'cat') {
-        generateButton.classList.add('pulse');
+        animalTypeSelect.classList.add('pulse'); //add a visual indicator for error
         return;
     } else {
-        generateButton.classList.remove('pulse');
+        animalTypeSelect.classList.remove('pulse');
     }
 
-    // Sets a request to Randommer API
+    // Prepare API request to get random names
     const xhr = new XMLHttpRequest();
     const url = `https://randommer.io/api/Name?nameType=fullname&quantity=5`;
     xhr.open("GET", url);
     xhr.setRequestHeader("X-Api-Key", 'e743dc30afe74b2ea1d3f40295e671ae');
     xhr.setRequestHeader("Accept", "application/json");
+
+    //Handle the API response
     xhr.onreadystatechange = function () {
         if (xhr.readyState === 4 && xhr.status === 200) {
             const response = JSON.parse(xhr.responseText);
@@ -51,13 +60,13 @@ function generateName() {
             updateUI();
         }
     };
-    // Sends the request
+    // Sends the API request
     xhr.send();
 }
 
 updateUI();
 
-//Fetch GET request for list of dogs names without spaces
+//Fetch list of dog breeds
 fetch("https://dog.ceo/api/breeds/list/all")
     .then(function (response) {
         return response.json()
@@ -65,23 +74,24 @@ fetch("https://dog.ceo/api/breeds/list/all")
     .then(function (data) {
         console.log(data.message)
         var breedsObject = data.message
-        var breedsArray = Object.keys(breedsObject)
+        var breedsArray = Object.keys(breedsObject); //Get breed names as an array
 
+        //Populate the dropdown with dog breed options
         for (var i = 0; i < breedsArray.length; i++) {
             const option = document.createElement('option');
             option.value = breedsArray[i];
             option.innerText = breedsArray[i];
             select.appendChild(option);
         }
-    })
+    });
 
-//event listner with event target value 
+//event listner for breed selection, updating the displayed image
 $("#select").on("change", function showImage(e) {
     let url = (`https://dog.ceo/api/breed/${e.target.value}/images/random`)
-    console.log(url)
     getDoggo(url)
 })
 const img = document.querySelector('.dog-img');
+//function to fetcha and display a dog image
 const getDoggo = function (url) {
     img.classList.remove('show')
     fetch(url)
@@ -92,6 +102,7 @@ const getDoggo = function (url) {
             img.src = data.message
         })
 }
+//Adds a "load" event listener to show the image once
 img.addEventListener('load', function () {
     img.classList.add('show');
 });
@@ -169,20 +180,20 @@ const isScrollbarVisible = () => {
 //EXIT MODAL
 
 //For fetchind data for random cat facts
-var url= "https://catfact.ninja/fact"
+var url = "https://catfact.ninja/fact"
 
-function fetcher(){
-fetch(url)
-.then(function(response){
-  return response.json()
-})
-.then(function(data){
-  console.log(data)
- $(".cats-fact").html(`<p>"${data.fact}"</p>`)
+function fetcher() {
+    fetch(url)
+        .then(function (response) {
+            return response.json()
+        })
+        .then(function (data) {
+            console.log(data)
+            $(".cats-fact").html(`<p>"${data.fact}"</p>`)
 
-})
+        })
 
 }
 // Event listner
-$(window).on("load",fetcher)
+$(window).on("load", fetcher)
 $(".clicker").on("click", fetcher)
