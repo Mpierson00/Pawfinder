@@ -82,7 +82,7 @@
     <section id="video-and-images">
       <div id="video-container">
 
-        <iframe class="video" width="742" height="480" src="https://www.youtube.com/embed/dXFSlbm2ahk"
+        <iframe class="video" width="742" height="480" src="https://www.youtube.com/embed/dXFSlbm2ahk?&autoplay=1"
           title="Golden Retriever Meets New Tiny Kitten for the First Time!" frameborder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           allowfullscreen></iframe>
@@ -106,10 +106,59 @@
     
   </section>
 
+  <section id="feedback">
+    <h2>Feedback</h2>
+    <p>Please provide your feedback in the form below</p>
+   
+      <legend>How do you rate your overall experience?</legend>
+      <input type="radio" id="hindi" name="second-language" />
+      <label htmlFor="hindi">Bad</label>
+      <input type="radio" id="swahili" name="second-language" />
+      <label htmlFor="swahili">Good</label>
+      <input type="radio" id="navi" name="second-language"  />
+      <label htmlFor="navi" aria-disabled="true">Excellent</label>
+    </fieldset><br>
+
+    <textarea
+  name="Cpmments"
+  placeholder="Comments"
+  aria-label="Professional short bio"
+>
+</textarea>
+<form>
+  <fieldset>
+    <label>
+      First name
+      <input
+        name="first_name"
+        placeholder="First name"
+        autocomplete="given-name"
+      />
+    </label>
+    <label>
+      Email
+      <input
+        type="email"
+        name="email"
+        placeholder="Email"
+        autocomplete="email"
+      />
+      <button
+      type="submit">Send</button>
+    </label>
+  </fieldset>
+
+ 
+</form>
+ 
+  </section>
+
   <footer>
     <div id="about-us">Disclaimer: We are not associated with pawfinders.com. This website is only for educational
       purposes.</div>
   </footer>
+
+ 
 
   <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
     crossorigin="anonymous"></script>
