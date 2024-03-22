@@ -23,11 +23,13 @@ PawFinder is an engaging web application designed to assist pet enthusiasts in d
 - Navigate to the 'Pick Your Pet' section.
 - Select the type of pet (dog or cat) from the dropdown.
 - Click on 'Generate Random Name' to see a list of names.
+
 2. Finding Dog Breeds:
 
 - Click on 'Find Dog Breed'.
 - A modal will appear with a dropdown of different dog breeds.
 - Select a breed to view an image and get information about the breed.
+
 3. Exploring Cat Facts:
 
 - In the 'Did you know?' section, you can find interesting facts about cats.
