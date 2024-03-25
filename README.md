@@ -41,6 +41,12 @@ PawFinder is an engaging web application designed to assist pet enthusiasts in d
 2. Open the index.html file in your browser to launch the application.
 3. No additional installation required.
 
+## Deployed Screenshot and Link
+
+[Deployed Link](https://mpierson00.github.io/Pawfinder/)
+
+[![Screenshot-2024-03-25-at-4-38-49-PM.png](https://i.postimg.cc/v8fbkQ05/Screenshot-2024-03-25-at-4-38-49-PM.png)](https://postimg.cc/fkzG0hnb)
+
 ## Contributing
 
 Bailey Ellison, Rafael Mendano, Juju Nakarmi, Jose De Los Santos Oliver and Michael Pierson

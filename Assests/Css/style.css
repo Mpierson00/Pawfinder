@@ -109,6 +109,10 @@ nav {
 }
 
 /* Modal Styling */
+#select {
+margin-bottom: 20px;
+}
+
 article {
     background-color: #383940;
     border: none;
@@ -170,12 +174,18 @@ button {
     max-height: 60%
 }
 
+#img-cat {
+    margin-bottom: 20px;
+}
+
 .cats-fact {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:center;
     border: 3px solid #2e7071;
     border-radius: 20px;
     text-align: center;
-    margin-top: 20px;
-    margin-left: 140px;
+    margin: auto;
     width: 80%;
 
 }
@@ -209,6 +219,7 @@ button.clicker {
     list-style-type: none;
 }
 
+/* Feedback form Styling */
 #feedback {
     justify-content: center;
     display: inline-block;
@@ -244,49 +255,58 @@ button.clicker {
     border: 3px solid #FFFFFF;
 }
 
-.aboutUssection {
+/* About us and contact information styling */
+#about-us {
     color: #383940;
 }
 
-.michael {
+.biography {
     color: #383940;
-    grid-column-start: 2;
-    grid-column-end: 3;
-    grid-row-start: 1;
-    grid-row-end: 2;
+    display: grid;
+    justify-content: flex-start;
+    grid-template-columns: repeat(5, 1fr);
+    padding: 30px;
+}
+.biography h3 {
+font-size: 24px;
+color: #383940;
 }
 
-.juju {
-    grid-column-start: 2;
-    grid-column-end: 3;
-    grid-row-start: 2;
-    grid-row-end: 3;
+.biography p {
+    font-size: 14px;;
+    color: #383940;
 }
 
-.bailey {
-    grid-column-start: 3;
-    grid-column-end: 4;
-    grid-row-start: 2;
-    grid-row-end: 3;
-}
-
-.jose {
-    grid-column-start: 1;
-    grid-column-end: 2;
-    grid-row-start: 1;
-    grid-row-end: 2;
-}
-
+.michael,
+.juju,
+.bailey,
+.jose,
 .rafael {
-    grid-column-start: 1;
-    grid-column-end: 2;
-    grid-row-start: 2;
-    grid-row-end: 3;
+    padding: 10px;
+}
+
+#contact-us h3 {
+color: #383940;
 }
 
 .emails {
-    grid-column-start: 3;
-    grid-column-end: 4;
-    grid-row-start: 1;
-    grid-row-end: 2;
+    color: #383940;
+    display: inline;
+    justify-content: flex-start;
+    max-width: 20%;
+}
+
+footer p {
+    font-size: 14px;
+    color: #383940;
+}
+
+@media only screen and (max-width: 775px) {
+    .biography {
+    color: #383940;
+    display: grid;
+    justify-content: flex-start;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 30px;
+    }
 }
